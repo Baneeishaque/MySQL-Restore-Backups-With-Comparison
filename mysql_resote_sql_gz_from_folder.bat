@@ -43,20 +43,41 @@ REM gunzip < %line% | mysql -uroot %db_prefix%%index%
 
 call set line=%%line:!find!=!replace!%%
 FOR %%i IN ("%line%") DO (
-	ECHO %%~ni >> backup_files.list
+	SET backup_file_name=%%~ni
+	ECHO !backup_file_name! >> backup_files.list
+	REM PAUSE
 )
 
 ECHO %line% - %db_prefix%%index% >> map.txt
 ECHO %line% to %db_prefix%%index%
+REM ECHO %line%
 
 IF NOT %index% EQU 0 (
-REM 	REM SET target_file=%line%_to_%previous_db%.mdc
-REM 	ECHO Target File : %target_file%
-REM 	PAUSE
-REM 	REM COPY test.template %target_file%
-	REM SET previous_db =""
+
+	ECHO Project File : !backup_file_name!_to_!previous_db!.mdc
+	DEL ^"!backup_file_name!_to_!previous_db!.mdc^" 2>NUL
+	COPY redgate_mdc_project.template ^"!backup_file_name!_to_!previous_db!.mdc^"
+
+	set InputFile=^"!backup_file_name!_to_!previous_db!.mdc^"
+	set OutputFile=^"!backup_file_name!_to_!previous_db!.mdc_new^"
+	set "_strFind=    <name>project_name</name>"
+	set "_strInsert=    <name>!backup_file_name!_to_!previous_db!</name>"
+
+
+	>%OutputFile% (
+  		for /f "usebackq delims=" %%A in (%InputFile%) do (
+    		REM if "%%A" equ "%_strFind%" (echo %_strInsert%) else (echo %%A)
+  		)
+	)
+
+	REM del ^"!backup_file_name!_to_!previous_db!.mdc^"
+	REM rename ^"!backup_file_name!_to_!previous_db!.mdc_new^" ^"!backup_file_name!_to_!previous_db!.mdc^"
+
 )
 
+SET previous_db=!backup_file_name!
 SET /A index+=1
+
+PAUSE
 
 :end
