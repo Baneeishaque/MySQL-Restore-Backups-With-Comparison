@@ -1,2 +1,6 @@
 /*.mdc*
 /*.log
+/backups.list
+/backup_files.list
+/databases.list
+/map.txt

@@ -1,12 +1,4 @@
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\vfmobo6d_lottery (2).sql.gz - lotte0
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\mudraqd8_wordpressc.sql.gz - lotte1
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\mudraqd8_wordpress (1m).sql.gz - lotte2
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\mudraqd8_wordpress (2m).sql.gz - lotte6
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\mudraqd8_wordpress (6).sql.gz - lotte7
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\mudraqd8_wordpdress.sql.gz - lotte8
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\mudraqd8_wordpress (27).sql.gz - lotte11
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\findandg_temp lottery 2017-12-01 12-48-35 to 2018-02-08 20-09-50.sql.gz - lotte14
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\vfmobo6d_lottcery.sql.gz - lotte20
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\mudraqd8_wordpress (8).sql.gz - lotte23
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\mudraqd8_wordpress11.sql.gz - lotte24
-E:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\mudraqd8_wordpress (21).sql.gz - lotte25
+D:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\t\vfmobo6d_lottery_13.sql.gz - lottery0
+D:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\t\vfmobo6d_lottery_12.sql.gz - lottery1
+D:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\t\vfmobo6d_lottery_11.sql.gz - lottery2
+D:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\t\vfmobo6d_lottery_10.sql.gz - lottery3
