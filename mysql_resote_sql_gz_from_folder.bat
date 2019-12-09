@@ -34,9 +34,9 @@ GOTO end
 SET line=%1
 REM ECHO Line %index% is %line%
 REM ECHO create database `%db_prefix%%index%` ^| mysql -uroot
-ECHO create database `%db_prefix%%index%` | mysql -uroot 1>NUL
+ECHO create database `%db_prefix%%index%` | mysql -uroot -p1234 1>NUL
 REM ECHO gunzip ^< %line% ^| mysql -uroot %db_prefix%%index%
-gunzip < %line% | mysql -uroot %db_prefix%%index% 1>NUL
+gunzip < %line% | mysql -uroot -p1234 %db_prefix%%index% 1>NUL
 
 call set line=%%line:!find!=!replace!%%
 FOR %%i IN ("%line%") DO (
@@ -46,36 +46,7 @@ FOR %%i IN ("%line%") DO (
 
 ECHO %line% - %db_prefix%%index%>> map.txt
 ECHO %line% to %db_prefix%%index%
-
-IF NOT %index% EQU 0 (
-
-	REM ECHO Project File : !backup_file_name!_to_!previous_db!.mdc
-	REM DEL ^"!backup_file_name!_to_!previous_db!.mdc^" 2>NUL
-	REM COPY redgate_mdc_project.template /Y ^"!backup_file_name!_to_!previous_db!.mdc^" 1>NUL
-
-	REM SET InputFile=!backup_file_name!_to_!previous_db!.mdc
-	REM SET OutputFile=!backup_file_name!_to_!previous_db!.mdc_new
-	REM REM ECHO Input File : !InputFile!
-	REM REM ECHO Output File : !OutputFile!
-
-	REM SET "_strFind=    <name>project_name</name>"
-	REM SET "_strInsert=    <name>!backup_file_name!_to_!previous_db!</name>"
-
-	REM > "!OutputFile!" (
-	REM 	for /f "usebackq delims=" %%A in ("!InputFile!") DO (
-	REM 		if "%%A" EQU "!_strFind!" ( ECHO !_strInsert! ) else ( ECHO %%A )
-	REM 	)
-	REM )
-
-	REM DEL ^"!backup_file_name!_to_!previous_db!.mdc^"
-	REM RENAME ^"!backup_file_name!_to_!previous_db!.mdc_new^" ^"!backup_file_name!_to_!previous_db!.mdc^"
-
-	FOR /F "tokens=*" %%A in (databases.list) do CALL "C:\Program Files\Devart\dbForge Data Compare for MySQL\datacompare.com" /datacompare /source connection:"User Id=root;Password=;Host=localhost;Database=%db_prefix%%index%;Enlist=False;Transaction Scope Local=True;Character Set=utf8" /target connection:"User Id=root;Password=;Host=localhost;Database=%%A;Enlist=False;Transaction Scope Local=True;Character Set=utf8" /IgnoreComputedColumns:No /CompareViews:Yes /report:"%db_prefix%%index%_to_%%A.html" /reportformat:html /log:"%db_prefix%%index%_to_%%A.log"
-
-)
-
 ECHO %db_prefix%%index%>> databases.list
-SET previous_db=!backup_file_name!
 SET /A index+=1
 REM PAUSE
 
