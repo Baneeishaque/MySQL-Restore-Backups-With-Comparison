@@ -1,4 +1,0 @@
-D:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\t\vfmobo6d_lottery_13.sql.gz - lottery0
-D:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\t\vfmobo6d_lottery_12.sql.gz - lottery1
-D:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\t\vfmobo6d_lottery_11.sql.gz - lottery2
-D:\DK-HP-PA-2000AR\wwwroot\php\Lottery_Server\db_backups\t\vfmobo6d_lottery_10.sql.gz - lottery3

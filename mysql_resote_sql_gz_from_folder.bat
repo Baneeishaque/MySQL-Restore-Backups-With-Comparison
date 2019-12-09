@@ -75,7 +75,6 @@ IF NOT %index% EQU 0 (
 )
 
 ECHO %db_prefix%%index%>> databases.list
-SET previous_db=!backup_file_name!
 SET /A index+=1
 REM PAUSE
 
